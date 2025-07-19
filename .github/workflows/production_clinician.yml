@@ -26,11 +26,10 @@ jobs:
       
       - name: Install dependencies
         run: pip install -r requirements.txt
-        
-      - name: Zip artifact for deployment
-        run: |
-          zip -r release.zip . -x "venv/*" ".github/*" "__pycache__/*" "*.pyc" "*.pyo" "*.git/*" "*.pytest_cache/*" "*.log" "*.DS_Store"
 
+      - name: Zip source files only (let Oryx handle install)
+        run: zip -r release.zip . -x "venv/*" ".github/*" "__pycache__/*" "*.zip" "*.pyc" "*.pyo" "*.git/*" "*.pytest_cache/*" "*.log" "*.DS_Store" ".gitignore"
+      
       - name: Login to Azure
         uses: azure/login@v1
         with:
