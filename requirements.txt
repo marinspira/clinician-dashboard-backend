@@ -1,6 +1,7 @@
 # Backend web server
 fastapi==0.110.0
 uvicorn==0.29.0
+gunicorn
 
 # Hugging Face Transformers and dependencies
 transformers==4.41.1
